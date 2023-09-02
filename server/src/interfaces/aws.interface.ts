@@ -16,3 +16,8 @@ export interface S3ParamsGetFile {
   Bucket: string;
   Key   : string;
 }
+
+
+export interface DynamoConfig extends AwsConfig {
+  apiVersion: string;
+}
