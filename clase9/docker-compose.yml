@@ -1,0 +1,18 @@
+# Docker compose va en listar todos los contenedores que vamos utilizar
+
+# Version de docker compose
+version: '3'
+
+# Servicios que vamos a utilizar
+services:
+  python_api: # Nombre del servicio
+    container_name: api_python # Nombre del contenedor
+    restart: always # Siempre que se reinicie el contenedor
+    build: . # Del directorio actual va buscar el archivo dockerfile
+    ports:
+      - '4000:5000' # Puerto de la maquina: puerto del contenedor
+    
+
+# install docker compose
+# docker-compose build
+# docker-compose up

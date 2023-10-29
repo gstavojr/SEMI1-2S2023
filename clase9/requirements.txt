@@ -1,0 +1,7 @@
+# Dependencias que vamos a utilizar utilizar 
+flask
+flask-cors
+#Flask-PyMongo
+#PyMongo
+#boto3
+#pytz

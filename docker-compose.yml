@@ -1,0 +1,27 @@
+version: '3.7'
+
+
+networks:
+  network-semi:
+    driver: bridge
+
+services:
+  frontend:
+    container_name: frontend_container
+    restart: always
+    build: ./frontend/ejemploFront
+    ports:
+      - "80:80"
+    # environment:
+    #   - ENV_FILE=./frontend/ejemploFront/.env.production
+    networks:
+      - network-semi
+
+  backend:
+    container_name: backend_container
+    restart: always
+    build: ./server
+    ports:
+      - "3000:3000"
+    networks:
+      - network-semi

@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  web:
+    container_name: exampleapp #Nombre del contendor
+    restart: always
+    build: . # Del directorio actual va buscar el archivo docker file
+    ports:
+      - '5000:3000' # Va exponer en el puerto 5000
+    links:
+      - mongo # El servicio de arriba va estar enlazado con la parte de abajo
+    volumes:
+      - .:/usr/src/app # todo el contendio que este en el folder se copiara en /usr/src/app
+  mongo:
+    container_name: mymongodatabase
+    image: mongo # Imangen en cual va estar basaada
+    ports:
+      - '27018:27017'
+    logging:
+      driver: none # Sirve para no ver los logs de mongo
+
